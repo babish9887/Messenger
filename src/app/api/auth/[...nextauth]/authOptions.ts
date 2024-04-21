@@ -6,8 +6,8 @@ import bcrypt from 'bcrypt'
 import {AuthOptions} from 'next-auth'
 
 
-import prisma from './prismadb'
-const authOptions:AuthOptions={
+import prisma from '../../../lib/prismadb'
+const MyAuthOptions:AuthOptions={
       adapter: PrismaAdapter(prisma),
       providers:[
             GithubProvider({
@@ -51,4 +51,4 @@ const authOptions:AuthOptions={
       },
       secret: process.env.NEXTAUTH_SECRET,
 }
-export default authOptions;
+export default MyAuthOptions;
