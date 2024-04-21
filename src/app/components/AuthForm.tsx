@@ -59,6 +59,7 @@ function AuthForm() {
                  .then(()=>{
                         toast.success("User created Successfully");
                         router.push('/users')
+                        router.refresh();
                   })
                  .catch(()=> toast.error('Something went wrong!'))
                  .finally(()=>setIsLoading(false))
@@ -72,6 +73,8 @@ function AuthForm() {
                         if(res?.ok && !res?.error){
                               toast.success('Logged in!')
                               router.push('/users')
+                         router.refresh();
+
 
                         }
                   })

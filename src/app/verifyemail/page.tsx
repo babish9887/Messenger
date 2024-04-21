@@ -40,7 +40,6 @@ function VerifyEmailPage() {
                         console.log(e.message)
                   }).finally(()=>{
                         setVerifying(false)
-                        setIsVerified(false)
                   })
             } catch(e:any){
                   toast.error("Something went wrong! Please try again")
