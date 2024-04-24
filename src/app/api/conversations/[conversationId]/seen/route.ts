@@ -67,7 +67,6 @@ export async function POST(request: Request,{ params }: { params: ID_Params }) {
 
             return new NextResponse('Success')
       } catch(e:any){
-            console.log(e.message);
             return new NextResponse('Internal Error', {status:500})
       }
 }

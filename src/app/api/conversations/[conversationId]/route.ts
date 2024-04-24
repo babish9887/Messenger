@@ -41,7 +41,6 @@ export async function DELETE(request:Request, {params}:{params:ID_Params}){
       })
       return NextResponse.json(deletedConversation)
       }catch(e:any){
-            console.log(e.message);
             return new NextResponse('Internal Error', {status:500})
       }
 }

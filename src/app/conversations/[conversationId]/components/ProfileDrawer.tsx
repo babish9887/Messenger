@@ -29,7 +29,6 @@ interface ProfileDrawerProps{
 }
 
 function ProfileDrawer({isOpen, onClose, data, messages}:ProfileDrawerProps) {
-      console.log(messages)
       const otherUser=useOtherUser(data)
       const [confirmOpen, setConfirmOpen]=useState(false)
       const {members}=useActiveList();

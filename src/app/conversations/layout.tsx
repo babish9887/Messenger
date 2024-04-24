@@ -6,7 +6,6 @@ import ConversationList from "./components/ConversationList";
 export default async function ConversationLayout({children}:{children:React.ReactNode}){
       const conversations=await getConversations();
       const users=await getUsers();
-      console.log(users);
 
       return (
             <Sidebar>

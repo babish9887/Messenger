@@ -13,7 +13,6 @@ function MediaBox({messages}: {messages:any}) {
       const [imageModalOpen, setImageModelOpen]=useState(false);
 
       const images=messages.filter((message:any)=>message.image!==null)
-      console.log(images)
   return (
       <>
       <ImageModal src={images.image} isOpen={imageModalOpen} onClose={()=>setImageModelOpen(false)} />

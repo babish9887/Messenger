@@ -31,13 +31,13 @@ function GroupChatModal({isOpen, onClose, users}:GroupModalProps) {
       const onSubmit: SubmitHandler<FieldValues>=(data)=>{
             setIsLoading(true)
             axios.post('/api/conversations',{
-                  ...data, isGroup: true
+                  ...data, members, isGroup: true
             })
             .then(()=>{
                   router.refresh();
                   onClose()
             })
-            .catch(()=>toast.error('Something went Wrong'))
+            .catch(()=>toast.error('Group must have at least 3 members'))
             .finally(()=>setIsLoading(false))
       }
   return (

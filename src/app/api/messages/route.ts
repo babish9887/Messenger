@@ -38,7 +38,6 @@ export async function POST(request: Request){
                   sender: true,
             }
       });
-
       const updatedConversation=await prisma?.conversation.update({
             where:{
                   id:conversationId
@@ -73,7 +72,6 @@ export async function POST(request: Request){
       })
       return NextResponse.json(newMessage);
       }catch(e:any){
-            console.log(e.message);
             return new NextResponse('Internal Error', {status:500})
       }
 }

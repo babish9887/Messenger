@@ -38,30 +38,6 @@ function SettingsModal({isOpen, onClose, currentUser}:SettingsModalProps) {
             })
       }
 
-
-// Inside your component
-// const handleUpload = (result: any) => {
-//   // Convert the image to a square shape
-//   sharp(result.info.secure_url)
-//     .resize({
-//       fit: 'cover',
-//       width: 200, // Set the desired width for a square image
-//       height: 200 // Set the desired height for a square image
-//     })
-//     .toBuffer()
-//     .then((buffer:any) => {
-//       // Get the buffer data and update the image state
-//       setValue('image', `data:image/jpeg;base64,${buffer.toString('base64')}`, {
-//         shouldValidate: true
-//       });
-//     })
-//     .catch((error:any) => {
-//       console.error('Error processing image:', error);
-//       toast.error('Failed to process image');
-//     });
-// };
-
-
       const onSubmit: SubmitHandler<FieldValues>=(data)=>{
            setIsLoading(true)
            axios.post('/api/settings', data)

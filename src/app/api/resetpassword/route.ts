@@ -24,14 +24,12 @@ export async function POST(request: NextRequest){
         if(!user){
             return NextResponse.json({error: "User does not Exist", success: false}, {status:404})
         }
-        console.log(user)
         const response = NextResponse.json({
             message: "Check your Email",
             success: true
         }, {status: 200})
         return response
     }catch(e:any){
-            console.log(e.message)
         return NextResponse.json({error: e.message}, {status: 500})
     }
 }

@@ -18,7 +18,6 @@ interface HeaderProps{
 };
 
 const Header:React.FC<HeaderProps>=({conversation, messages})=> {
-      console.log(messages)
       const otherUser=useOtherUser(conversation);
       const [drawerOpen, setDrawerOpen]=useState(false)
       const {members}=useActiveList();

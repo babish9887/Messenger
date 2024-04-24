@@ -9,13 +9,11 @@ export async function POST(request:Request) {
 
       if(!currentUser || !currentUser?.email){
             return new NextResponse('Unauthorized', {status:401});
-
       }
 
       if(isGroup && (!members || members.length<2 || !name)){
             return new NextResponse('Invalid Data', {status:400})
       }
-
       if(isGroup){
             const newConversation = await prisma?.conversation.create({
                   data: {
@@ -88,7 +86,6 @@ export async function POST(request:Request) {
       return NextResponse.json(newConversation)
 
       } catch(e:any){
-            console.log(e.message)
             return new NextResponse('Internal Error', {status:500})
       }
       

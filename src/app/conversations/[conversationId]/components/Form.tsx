@@ -16,7 +16,6 @@ function Form() {
             }
       })
       const onSubmit: SubmitHandler<FieldValues>=(data)=>{
-            console.log('wow')
             setValue('message', '', {shouldValidate: true})
             axios.post('/api/messages',{
                   ...data, conversationId
@@ -24,7 +23,6 @@ function Form() {
       }
 
       const handleUpload=(result:any)=>{
-            console.log("hello")
             axios.post('/api/messages', {
                   image:result?.info?.secure_url,
                   conversationId: conversationId
