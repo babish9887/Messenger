@@ -32,7 +32,7 @@ const ConfirmModal: React.FC<ConfirmModalProps> = ({
       router.push('/conversations');
       router.refresh();
     })
-    .catch((e) =>{ toast.error('Something went wrong!');console.log(e)})
+    .catch(() =>{ toast.error('Something went wrong!');})
     .finally(() => setIsLoading(false))
   }, [router, conversationId, onClose]);
 
