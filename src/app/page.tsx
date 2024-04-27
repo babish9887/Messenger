@@ -24,7 +24,7 @@ const li= "border-b-4 border-transparent hover:border-b-4 hover:border-blue-500 
 export default function Home(){
       const {theme, setTheme}=useTheme();
       return (
-        <div className="w-full  flex flex-col min-h-[100%] h-auto dark:bg-slate-900 bg-gray-100 text-black dark:text-white" >
+        <div suppressHydrationWarning={true} className="w-full  flex flex-col min-h-[100%] h-auto dark:bg-slate-900 bg-gray-100 text-black dark:text-white" >
             <header className="w-full flex justify-between  md:justify-center items-center ">
                   <div className="w-auto p-5 sm:m-auto">
                        <Image src={MessengerLogo} alt='logo' height={32} width={32} className=" hover:cursor-pointer "/>

@@ -111,7 +111,7 @@ function AuthForm() {
                         //             toast.success("Check Your Email")
                         // })
 
-                        const res= await fetch('http://localhost:3000/api/forgotpassword',{
+                        const res= await fetch('/api/forgotpassword',{
                               method:"POST",
                              headers:{
                               "Content-Type":"application/json"
@@ -136,7 +136,7 @@ function AuthForm() {
                   const confirmPassword=document.getElementById('email')?.value
                   if(password!==confirmPassword)
                         return toast.error("Password did't match")
-                        const res= await fetch('http://localhost:3000/api/resetpassword',{
+                        const res= await fetch('/api/resetpassword',{
                               method:"POST",
                              headers:{
                               "Content-Type":"application/json"
