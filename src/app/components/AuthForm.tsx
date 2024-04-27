@@ -105,11 +105,6 @@ function AuthForm() {
             if(forgotPassword && !resetPassword){
                   // @ts-ignore
                   const email:HTMLElement=document.getElementById('email').value
-                        // await axios.post('http://localhost:3000/api/forgotpassword',{email})
-                        // .then((res)=>{
-                        //       if(res.data.success)
-                        //             toast.success("Check Your Email")
-                        // })
                         const res= await fetch('/api/forgotpassword',{
                               method:"POST",
                              headers:{
@@ -119,11 +114,10 @@ function AuthForm() {
                         }).then((res)=>{
                               if(res.ok){
                                     toast.success("Check Your Email")
-                              } else{
-                                    toast.error("Something went wrong!")
+                              } else if(res.status===404){
+                                    toast.error("User Doesnot Exist")
                               }
                         }).catch((e)=>{
-                              console.log(e)
                               toast.error("Something went wrong!")
                         })
                        
@@ -149,6 +143,7 @@ function AuthForm() {
                         })
                         if(res.ok){
                               toast.success("Password reset Successfull")
+                              router.replace('/')
                         } else{
                               toast.error("Something went wrong!")
                         }
