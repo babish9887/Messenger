@@ -41,7 +41,8 @@ function SettingsModal({isOpen, onClose, currentUser}:SettingsModalProps) {
       const onSubmit: SubmitHandler<FieldValues>=async (data)=>{
            setIsLoading(true)
            await axios.post('/api/settings', data)
-           .then(()=>{
+           .then((res)=>{
+            console.log(res);
             router.refresh()
             toast.success("User Updated Successfully")
             onClose()
