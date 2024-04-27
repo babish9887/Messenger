@@ -80,13 +80,13 @@ const ConversationList: React.FC<ConversationProps> = ({initialItems, users})=>{
             isOpen? "hidden":"block w-full left-0"
             )}>
                   <div className="px-5">
-                        <div className="flex justify-between mb-4 pt-4">
+                        <div className="flex justify-between mb-4 lg:flex-row sm:flex-col pt-4">
                               <div className="text-2xl font-extrabold text-neutral-800 block"> 
                                     Chats
                               </div>
                               <div 
                               onClick={()=>setIsModalOpen(true)}
-                              className="sm:hidden lg:flex rounded-full p-2 bg-gray-100 text-gray-600 cursor-pointer hover:opacity-75 transition">
+                              className=" lg:flex rounded-full p-2 flex items-center justify-center bg-gray-100 text-gray-600 cursor-pointer hover:opacity-75 transition">
                                     <MdOutlineGroupAdd size={20}/>
                               </div>
                         </div>

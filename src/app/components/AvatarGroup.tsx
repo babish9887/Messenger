@@ -19,7 +19,7 @@ function AvatarGroup({users}:AvatarGroupProps) {
       return (
             <div className='relative h-9 w-9 md:w-11 md:h-11'>
                   {slicedUsers?.map((user, index)=>(
-                        <div key={user.id} className={`absolute inline-block rounded-full overflow-hidden h-[21px] w-[21px] ${positionMap[index as keyof typeof positionMap]}`} >
+                        <div key={user.id} className={`absolute inline-block rounded-full overflow-hidden md:h-[21px] md:w-[21px] h-[18px] w-[18px] ${positionMap[index as keyof typeof positionMap]}`} >
                               <Image src={user?.image || PlaceholderImg} fill alt='Avatar'/>
                          </div>     
                   ))}

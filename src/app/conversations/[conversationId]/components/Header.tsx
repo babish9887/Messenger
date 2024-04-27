@@ -41,7 +41,7 @@ const Header:React.FC<HeaderProps>=({conversation, messages})=> {
             <ProfileDrawer  messages={messages} data={conversation} isOpen={drawerOpen} onClose={()=>setDrawerOpen(false)} />
             <div className='bg-white w-full flex border-b-[1px] sm:px-4 py-3 px-4 lg:px-6 justify-between items-center shadow-sm'>
                   <div className='flex gap-3 items-center'>
-                        <div className='lg:hidden sm:hidden block text-sky-500 hover:text-sky-600 transition cursor-pointer'>
+                        <div className='lg:hidden block text-indigo-500 hover:text-sky-600 transition cursor-pointer'>
                         <Link href='/conversations'><HiChevronLeft size={32} /></Link>
                         </div>
                         {conversation.isGroup?(

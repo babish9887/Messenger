@@ -17,6 +17,7 @@ import { BsChevronDown, BsChevronRight } from 'react-icons/bs';
 import MediaBox from './MediaBox';
 import Users from '@/app/users/page';
 import ConversationId from '../page';
+import ProfileDrawerAvatarGroup from '@/app/components/ProfileDrawerAvatarGroup'
 
 
 interface ProfileDrawerProps{
@@ -48,7 +49,7 @@ function ProfileDrawer({isOpen, onClose, data, messages}:ProfileDrawerProps) {
                   return `${data.users.length} members`;
             }
             return isActive?'Active':'Offline';
-      },[data])
+      },[data, isActive])
       return (
       <>
       {/* <Modal isOpen={confirmOpen} onClose={() =>setConfirmOpen(false)}>
@@ -98,7 +99,7 @@ function ProfileDrawer({isOpen, onClose, data, messages}:ProfileDrawerProps) {
                                                             <div className='mb-2'>
                                                             {data.isGroup?(
                                                                   <div>
-                                                                  <AvatarGroup users={data.users} />
+                                                                  <ProfileDrawerAvatarGroup users={data.users} />
                                                                   </div>
                                                             ):(
                                                              <div className='relative'>
