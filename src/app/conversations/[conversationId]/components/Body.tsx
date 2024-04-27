@@ -17,15 +17,15 @@ function Body({initialMessages}:BodyProps) {
       const {conversationId}=useCoversation();
 
       useEffect( ()=>{
-            axios.post(`/api/conversations/${conversationId}/seen`)
+            axios.post(`/api/conversations/${conversationId}/seen`).then(()=>"")
       },[conversationId]);
 
       useEffect(() => {
             pusherClient.subscribe(conversationId)
             bottomRef?.current?.scrollIntoView();
         
-            const messageHandler = (message: FullMessageType) => {
-              axios.post(`/api/conversations/${conversationId}/seen`);
+            const messageHandler = async (message: FullMessageType) => {
+              await axios.post(`/api/conversations/${conversationId}/seen`);
         
               setMessages((current) => {
                 if (find(current, { id: message.id })) {
