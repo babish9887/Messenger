@@ -42,12 +42,11 @@ function SettingsModal({isOpen, onClose, currentUser}:SettingsModalProps) {
            setIsLoading(true)
            await axios.post('/api/settings', data)
            .then((res)=>{
-            console.log(res);
-            router.refresh()
             toast.success("User Updated Successfully")
+            router.refresh();
             onClose()
            })
-           .catch((e:any)=>{console.log(e); toast.error('Something went wrong!')})
+           .catch(()=>{ toast.error('Something went wrong!')})
            .finally(()=>setIsLoading(false))
       }
       return (
