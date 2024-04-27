@@ -9,19 +9,19 @@ import AuthSocialButton from "./AuthSocialButton"
 import { BsGithub, BsGoogle } from "react-icons/bs"
 import axios from "axios"
 import toast from "react-hot-toast"
-import { signIn, useSession } from "next-auth/react"
+import {  signIn, useSession } from "next-auth/react"
 import { useRouter } from "next/navigation"
 import clsx from "clsx"
 import { set } from "lodash"
+import getCurrentUser from "../actions/getCurrentUser"
 
 function AuthForm() {
 
       const session=useSession();
-      const router=useRouter()
+      const router=useRouter();
 
       useEffect(()=>{
             if(session?.status==='authenticated'){
-                  console.log('Authenticated')
                   router.push('/users')
             }
       },[session?.status, router])
@@ -93,6 +93,8 @@ function AuthForm() {
                         toast.error('Invalid credentials')
                   if(res?.ok && !res?.error){
                         toast.success('Logged in!')
+                        router.push('/users')
+                         router.refresh();
                   }
             })
             .finally(()=>{
@@ -106,7 +108,6 @@ function AuthForm() {
             if(forgotPassword && !resetPassword){
                   // @ts-ignore
                   const email:HTMLElement=document.getElementById('email').value
-                  console.log(email)
                         // await axios.post('http://localhost:3000/api/forgotpassword',{email})
                         // .then((res)=>{
                         //       if(res.data.success)
@@ -120,7 +121,6 @@ function AuthForm() {
                              },
                              body: JSON.stringify({email})
                         })
-                        console.log(res)
                         if(res.ok){
                               toast.success("Check Your Email")
                         } else{
@@ -146,7 +146,6 @@ function AuthForm() {
                              },
                              body: JSON.stringify({token, password})
                         })
-                        console.log(res)
                         if(res.ok){
                               toast.success("Password reset Successfull")
                         } else{
