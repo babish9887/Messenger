@@ -18,7 +18,7 @@ export async function POST(request: Request){
             }
       })
       const res=sendEmail({email, emailType: "VERIFY", userId: user.id})
-
+      console.log(res)
       return NextResponse.json(user)
       } catch(e: any){
             return new NextResponse('Internal Error', {status: 500})

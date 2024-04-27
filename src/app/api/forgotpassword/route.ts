@@ -15,7 +15,8 @@ export async function POST(request: NextRequest){
             return NextResponse.json({error: "User does not Exist"}, {status:404})
         }
 
-        const res=sendEmail({email, emailType: "RESET", userId: user.id})
+        const res=await sendEmail({email, emailType: "RESET", userId: user.id})
+        console.log(res)
         return NextResponse.json({
             message: "Check your Email",
             success: true

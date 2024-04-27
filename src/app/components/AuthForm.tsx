@@ -110,19 +110,23 @@ function AuthForm() {
                         //       if(res.data.success)
                         //             toast.success("Check Your Email")
                         // })
-
                         const res= await fetch('/api/forgotpassword',{
                               method:"POST",
                              headers:{
                               "Content-Type":"application/json"
                              },
                              body: JSON.stringify({email})
-                        })
-                        if(res.ok){
-                              toast.success("Check Your Email")
-                        } else{
+                        }).then((res)=>{
+                              if(res.ok){
+                                    toast.success("Check Your Email")
+                              } else{
+                                    toast.error("Something went wrong!")
+                              }
+                        }).catch((e)=>{
+                              console.log(e)
                               toast.error("Something went wrong!")
-                        }
+                        })
+                       
             } else if(forgotPassword && resetPassword){
                   const urlToken = window.location.search.split("%3D")[1];
                   const token = urlToken.replace(/%2524/g, '$')
