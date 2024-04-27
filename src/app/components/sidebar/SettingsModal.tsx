@@ -46,7 +46,7 @@ function SettingsModal({isOpen, onClose, currentUser}:SettingsModalProps) {
             toast.success("User Updated Successfully")
             onClose()
            })
-           .catch(()=> toast.error('Something went wrong!'))
+           .catch((e:any)=>{console.log(e); toast.error('Something went wrong!')})
            .finally(()=>setIsLoading(false))
       }
       return (

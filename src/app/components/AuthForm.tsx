@@ -70,8 +70,8 @@ function AuthForm() {
                         if(res?.error)
                               toast.error('Invalid credentials')
                         if(res?.ok && !res?.error){
-                              router.replace('/users')
                               toast.success('Logged in!')
+                              router.push('/users')
 
 
                         }
