@@ -29,7 +29,7 @@ function Form() {
             })
       }
       return (
-            <div className='py-4 px-4 bg-white border-t flex items-center gap-2 lg:gap-4 w-full'>
+            <div className='py-4 px-4 bg-white border-t dark:bg-gray-800 flex items-center gap-2 lg:gap-4 w-full'>
                   <CldUploadButton options={{maxFiles:1 }} onUpload={handleUpload} uploadPreset='nturjoga'>
                   <div className='text-indigo-500 hover:cursor-pointer'>
                         <HiPhoto size={30}/>

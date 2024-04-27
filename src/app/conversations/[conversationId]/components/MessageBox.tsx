@@ -22,11 +22,11 @@ function MessageBox({data, isLast}:MessageBoxProps) {
       .map(user=>user.name)
       .join(", ");
 
-      const container = clsx(`flex gap-3 p-4`, isOwn && 'justify-end');
+      const container = clsx(`flex gap-3 p-4 dark:bg-gray-900 h-auto`, isOwn && 'justify-end');
 
       const avatar=clsx(isOwn && 'order-2');
 
-      const body=clsx('flex flex-col gap-2', isOwn && 'items-end');
+      const body=clsx('flex flex-col gap-2 dark:bg-gray-900', isOwn && 'items-end');
 
       const message=clsx('text-sm w-fit overflow-hidden',
       isOwn? "bg-indigo-500 text-white":'bg-gray-100', 
@@ -38,11 +38,11 @@ function MessageBox({data, isLast}:MessageBoxProps) {
                         <Avatar user={data.sender}/>
                   </div>
                   <div className={body}>
-                        <div className='flex items-center gap-1'>
-                              <div className='text-sm text-gray-500'>
+                        <div className='flex items-center gap-1 dark:bg-gray-900'>
+                              <div className='text-sm text-gray-500 dark:text-gray-300'>
                                     {data.sender.name}
                               </div>
-                              <div className='text-xs text-gray-400'>
+                              <div className='text-xs text-gray-400 dark:text-gray-300'>
                                     {format(new Date(data.createdAt), 'p')}
                               </div>
                         </div>
@@ -59,7 +59,7 @@ function MessageBox({data, isLast}:MessageBoxProps) {
                               )}
                         </div>
                         {isLast && isOwn && seenList.length>0 &&(
-                              <div className='text-xs font-light text-gray-500'>
+                              <div className='text-xs font-light text-gray-500 dark:text-gray-300'>
                                     {`Seen by ${seenList}`}
                               </div>
                         )}

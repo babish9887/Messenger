@@ -76,12 +76,12 @@ const ConversationList: React.FC<ConversationProps> = ({initialItems, users})=>{
       return(
             <>
             <GroupChatModal users={users} isOpen={isModalOpen} onClose={()=>setIsModalOpen(false)}/>
-            <aside className={clsx(`sm:w-[105px] md:w-[115px] z-0 bg-white fixed inset-y-0 pb-20 lg:pb-30 lg:left-20 lg:w-80 lg:block overflow-y-auto border-r border-gray-200 sm:block`,
+            <aside className={clsx(`sm:w-[105px] md:w-[115px] z-0 bg-white dark:bg-slate-900 fixed inset-y-0 pb-20 lg:pb-30 lg:left-20 lg:w-80 lg:block overflow-y-auto border-r border-gray-200 sm:block`,
             isOpen? "hidden":"block w-full left-0"
             )}>
                   <div className="px-5">
                         <div className="flex justify-between mb-4 lg:flex-row sm:flex-col pt-4">
-                              <div className="text-2xl font-extrabold text-neutral-800 block"> 
+                              <div className="text-2xl font-extrabold text-neutral-800 block dark:text-neutral-200"> 
                                     Chats
                               </div>
                               <div 

@@ -27,12 +27,12 @@ const UserBox: React.FC<UserBoxProps>  = ({data})=>{
       return(
             <>
             {isLoading && <LoadingModal />}
-            <div onClick={handleClick} className="w-full relative flex items-center space-x-3 bg-white p-3 hover:bg-neutral-100 rounded-lg transition cursor-pointer">
+            <div onClick={handleClick} className="w-full relative flex items-center space-x-3 bg-white dark:bg-gray-900 p-3 hover:bg-neutral-100 dark:hover:bg-gray-800 rounded-lg  cursor-pointer">
                   <Avatar user={data}/>
                   <div className="min-w-0 flex-1">
                         <div className="focus:outline-none">
                               <div className="flex justify-between items-center mb-1">
-                                    <p className=" text-base font-semibold text-gray-900">
+                                    <p className=" text-base font-semibold text-gray-900 dark:text-gray-100">
                                           {data.name}
                                     </p>
                               </div>

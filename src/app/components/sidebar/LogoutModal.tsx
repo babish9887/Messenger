@@ -21,7 +21,7 @@ function LogoutModal({isOpen, onClose, currentUser}:LogoutModalProps) {
                   <form>
                         <div className='space-y-12'>
                               <div className=''>
-                                    <h2 className='font-semibold leading-7 text-gray-900 text-2xl'>
+                                    <h2 className='font-semibold leading-7 text-gray-900 dark:text-gray-100 text-2xl'>
                                           Are you sure to Logout?
                                     </h2>
                                    

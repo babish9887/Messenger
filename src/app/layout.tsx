@@ -4,7 +4,7 @@ import "./globals.css";
 import ToasterContext from "./context/ToasterContext";
 import AuthContext from "./context/AuthContext";
 import ActiveStatus from "./components/ActiveStatus";
-
+import { ThemeProvider } from "@/app/components/theme-provider"
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -23,12 +23,15 @@ export default function RootLayout({
   return (
     <html lang="en">
 
-      <body className={inter.className}>
+      <body className={`${inter.className} dark:bg-gray-900`}>
+            <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+
             <AuthContext>
                   <ToasterContext />
                   <ActiveStatus />
                   {children}
             </AuthContext>
+            </ThemeProvider>
       </body>
     </html>
   );

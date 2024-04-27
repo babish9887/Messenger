@@ -54,14 +54,14 @@ function SettingsModal({isOpen, onClose, currentUser}:SettingsModalProps) {
                   <form onSubmit={handleSubmit(onSubmit)}>
                         <div className='space-y-12'>
                               <div className='border-b border-gray-900/10 pb-12'>
-                                    <h2 className='font-semibold leading-7 text-gray-900 text-2xl'>
+                                    <h2 className='font-semibold leading-7 text-gray-900 dark:text-gray-100 text-2xl'>
                                           Profile
                                     </h2>
-                                    <p className='mt-1 text-sm leading-6 text-gray-600'>Edit your public information</p>
+                                    <p className='mt-1 text-sm leading-6 text-gray-600 dark:text-gray-300'>Edit your public information</p>
                                     <div className='mt-10 flex flex-col gap-y-8'>
                                           <Input disabled={isLoading} label='Name' id='name' errors={errors} required register={register}/>
                                           <div>
-                                                <label className='block text-sm font-mono leading-6 text-gray-900'>Photo</label>
+                                                <label className='block text-sm font-mono leading-6 text-gray-900 dark:gray-100'>Photo</label>
                                                 <div className='mt-2 flex items-center gap-x-3'>
                                                 <Image
                                                       width="48"

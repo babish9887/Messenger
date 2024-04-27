@@ -81,12 +81,12 @@ function ProfileDrawer({isOpen, onClose, data, messages}:ProfileDrawerProps) {
                                     leave='transform transition ease-in-out duration-500'
                                     leaveTo='translate-x-full'>
                                     <Dialog.Panel className='pointer-events-auto w-screen max-w-md'>
-                                          <div className='flex h-full flex-col overflow-y-scroll bg-white py-6 shadow-xl'>
+                                          <div className='flex h-full flex-col overflow-y-scroll bg-white dark:bg-gray-900 py-6 shadow-xl'>
                                                 <div className='px-4 sm:px-6'>
                                                       <div className='flex items-start justify-end'>
                                                             <div className='ml-3 flex h-7 items-center'>
                                                                   <button onClick={onClose} type='button'
-                                                                  className='rounded-md bg-white text-gray-400 hover:text-gray-500 focus:outline-nonefocus:ring-2
+                                                                  className='rounded-md bg-white dark:bg-gray-800 text-gray-400 hover:text-gray-500 focus:outline-nonefocus:ring-2
                                                                   focus:ring-sky-500focus:ring-offset-2'>
                                                                         <span className='sr-only'>Close Panel</span>
                                                                         <IoClose size={24}/>
@@ -114,14 +114,14 @@ function ProfileDrawer({isOpen, onClose, data, messages}:ProfileDrawerProps) {
                                                             )}
                                                             </div>
                                                             <div className='text-4xl '>{title}</div>
-                                                            <div className='text-sm text-gray-500'>{statusText}</div>
-                                                            <div className='mt-4 bg-gray-200 py-2 px-3 rounded-full flex gap-x-1'><HiLockClosed size={22}/> End-to-end encrypted</div>
+                                                            <div className='text-sm text-gray-500 dark:text-gray-300'>{statusText}</div>
+                                                            <div className='mt-4 bg-gray-200 dark:text-gray-800 py-2 px-3 rounded-full flex gap-x-1'><HiLockClosed size={22}/> End-to-end encrypted</div>
                                                             <div className='flex gap-10 my-8' >
                                                                   <div onClick={()=>setConfirmOpen(true)} className='flex flex-col gap-3 items-center cursor-pointer hover:opacity-75'>
-                                                                        <div  className='w-10 h-10 bg-neutral-100 rounded-full flex justify-center items-center'>
+                                                                        <div  className='w-10 h-10 bg-neutral-100 dark:bg-gray-800 rounded-full flex justify-center items-center'>
                                                                               <IoTrash size={20}/>
                                                                         </div>
-                                                                        <div className='text-sm font-light text-neutral-600 '>
+                                                                        <div className='text-sm font-light text-neutral-600  dark:text-neutral-300'>
                                                                               Delete
                                                                         </div>
                                                                   </div>
@@ -130,17 +130,17 @@ function ProfileDrawer({isOpen, onClose, data, messages}:ProfileDrawerProps) {
                                                                   <dl className='space-y-8 px-4 sm:space-y-6 sm:px-6'>
                                                                         {!data.isGroup && (
                                                                               <div>
-                                                                                    <dt className='text-sm font-medium text-gray-500 sm:w-40 sm:flex-shrink-0'>
+                                                                                    <dt className='text-sm font-medium text-gray-500 dark:text-gray-300 sm:w-40 sm:flex-shrink-0'>
                                                                                           Email
                                                                                     </dt>
-                                                                                    <dd className='mt-1 text-sm text-gray-900 sm:col-span-2'>
+                                                                                    <dd className='mt-1 text-sm text-gray-900 dark:text-gray-100 sm:col-span-2'>
                                                                                           {otherUser.email}
                                                                                     </dd>
                                                                               </div>
                                                                         )}
                                                                         {data.isGroup && (
                                                                               <div>
-                                                                                    <dt className='text-sm fon-medium text-gray-500 sm:w-40 sm:flex-shrink-0'>
+                                                                                    <dt className='text-sm fon-medium text-gray-500 dark:text-gray-300 sm:w-40 sm:flex-shrink-0'>
                                                                                           Emails
                                                                                     </dt>
                                                                                     <dd className='mt-1 text-sm text-gray-900 sm:col-span-2'>
@@ -152,10 +152,10 @@ function ProfileDrawer({isOpen, onClose, data, messages}:ProfileDrawerProps) {
                                                                               <>
                                                                               <hr/>
                                                                               <div>
-                                                                                    <dt className='text-sm font-medium text-gray-500 sm:w-40 sm:flex-shrink-0'>
+                                                                                    <dt className='text-sm font-medium text-gray-500 dark:text-gray-300 sm:w-40 sm:flex-shrink-0'>
                                                                                           Joined
                                                                                     </dt>
-                                                                                    <dd className='mt-1 text-sm text-gray-900 sm:col-span-2'>
+                                                                                    <dd className='mt-1 text-sm text-gray-900 dark:text-gray-200 sm:col-span-2'>
                                                                                           <time  dateTime={joinedDate}>{joinedDate}</time>
                                                                                     </dd>     
                                                                               </div>

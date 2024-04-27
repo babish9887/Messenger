@@ -45,10 +45,10 @@ function GroupChatModal({isOpen, onClose, users}:GroupModalProps) {
             <form onSubmit={handleSubmit(onSubmit)}>
                   <div className='space-y-12'>
                         <div className='border-b border-gray-900/0 pb-12'>
-                              <h2 className='text-base font-semibold leading-7 text-gray-900'>
-                                    Create a group chat
+                              <h2 className='text-2xl font-semibold leading-7 text-gray-900 dark:text-gray-100'>
+                                    Create a Group Chat
                               </h2>
-                              <p className='mt-1 text-sm leading-6 text-gray-600'>
+                              <p className='mt-1 text-sm leading-6 text-gray-600 dark:text-gray-300'>
                                     Create a chat with more than 2 people.
                               </p>
                               <div className='mt-12 flex flex-col gap-y-8 z-[100000] '>
