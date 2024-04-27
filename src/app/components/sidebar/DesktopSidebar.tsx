@@ -40,7 +40,7 @@ const DesktopSidebar:React.FC<DesktopSidebarProps>=({currentUser})=> {
 
             
              <nav className='mt-4 flex flex-col justify-between items-center'>
-                  <div className="w-10 h-10  bg-slate-200 dark:bg-slate-800 dark:border cursor-pointer dark:text-gray-200 dark:border-gray-200 rounded-md right-0  mb-2 flex items-center justify-center text-2xl"
+                  <div className="w-10 h-10  bg-slate-200 dark:bg-slate-700 cursor-pointer dark:text-gray-200  rounded-md right-0  mb-2 flex items-center justify-center text-2xl"
                   onClick={()=>theme==='dark'?setTheme('light'):setTheme('dark')}>
                         {theme==='dark'?<IoSunnyOutline/>:<IoMoonOutline />}
                   </div>

@@ -36,8 +36,8 @@ const MobileFooter = ({currentUser}:any)=>{
                   {routes.map(item=>(
                         <MobileItem key={item.label} href={item.href} icon={item.icon} active={item.active} onClick={()=>handleClick(item.label)}/>
                   ))}
-                    <nav className=' m-2 flex justify-between items-center'>
-                  <div className="w-7 h-7 bg-slate-200 dark:bg-slate-800 dark:border cursor-pointer dark:text-gray-200 dark:border-gray-200 rounded-md mr-2 mb-2 flex items-center justify-center text-xl"
+                    <nav className=' m-2 flex justify-between items-center'> 
+                  <div className="w-7 h-7 bg-slate-200 dark:bg-slate-700 cursor-pointer dark:text-gray-200 rounded-md mr-2 mb-2 flex items-center justify-center text-xl"
                   onClick={()=>theme==='dark'?setTheme('light'):setTheme('dark')}>
                         {theme==='dark'?<IoSunnyOutline/>:<IoMoonOutline />}
                   </div>
