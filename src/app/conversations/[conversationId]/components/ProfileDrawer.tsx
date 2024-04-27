@@ -143,7 +143,7 @@ function ProfileDrawer({isOpen, onClose, data, messages}:ProfileDrawerProps) {
                                                                                     <dt className='text-sm fon-medium text-gray-500 dark:text-gray-300 sm:w-40 sm:flex-shrink-0'>
                                                                                           Emails
                                                                                     </dt>
-                                                                                    <dd className='mt-1 text-sm text-gray-900 sm:col-span-2'>
+                                                                                    <dd className='mt-1 text-sm text-gray-900 dark:text-gray-300 sm:col-span-2'>
                                                                                           {data.users.map((user)=>user.email).join(', ')}
                                                                                     </dd>
                                                                               </div>
