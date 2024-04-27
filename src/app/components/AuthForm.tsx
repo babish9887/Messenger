@@ -58,8 +58,7 @@ function AuthForm() {
                  await axios.post('/api/register', data)
                  .then(()=>{
                         toast.success("User created Successfully");
-                        router.push('/users')
-                        router.refresh();
+                        router.replace('/users')
                   })
                  .catch(()=> toast.error('Something went wrong!'))
                  .finally(()=>setIsLoading(false))
@@ -71,9 +70,8 @@ function AuthForm() {
                         if(res?.error)
                               toast.error('Invalid credentials')
                         if(res?.ok && !res?.error){
+                              router.replace('/users')
                               toast.success('Logged in!')
-                              router.push('/users')
-                         router.refresh();
 
 
                         }
@@ -93,8 +91,7 @@ function AuthForm() {
                         toast.error('Invalid credentials')
                   if(res?.ok && !res?.error){
                         toast.success('Logged in!')
-                        router.push('/users')
-                         router.refresh();
+                        router.replace('/users')
                   }
             })
             .finally(()=>{
