@@ -56,7 +56,7 @@ export default function Home() {
           <HiBars3 className="sm:hidden text-3xl mr-5 hover:cursor-pointer" />
         </nav>
         <div
-          className="absolute w-10 h-10 bg-slate-200 dark:bg-slate-800 dark:border dark:text-gray-200 dark:border-gray-200 rounded-md right-0 mr-4 flex items-center justify-center text-2xl"
+          className="absolute w-10 h-10 bg-slate-200 dark:bg-slate-700 dark:text-gray-200 rounded-md right-0 mr-4 flex items-center justify-center text-2xl"
           onClick={() =>
             theme === "dark" ? setTheme("light") : setTheme("dark")
           }
