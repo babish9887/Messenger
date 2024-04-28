@@ -16,7 +16,6 @@ export async function POST(request: NextRequest){
         }
 
         const res=await sendEmail({email, emailType: "RESET", userId: user.id})
-        console.log(res)
         return NextResponse.json({
             message: "Check your Email",
             success: true
