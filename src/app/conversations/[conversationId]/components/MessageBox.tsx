@@ -53,7 +53,7 @@ function MessageBox({data, isLast}:MessageBoxProps) {
                                           <Image src={data.image} alt='Image' height={288} width={288}/>
                                     </div>
                               ):(
-                                    <div>
+                                    <div className='text-black'>
                                           {data.body}
                                     </div>
                               )}
