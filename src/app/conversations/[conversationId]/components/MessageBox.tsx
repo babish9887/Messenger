@@ -29,7 +29,7 @@ function MessageBox({data, isLast}:MessageBoxProps) {
       const body=clsx('flex flex-col gap-2 dark:bg-gray-900', isOwn && 'items-end');
 
       const message=clsx('text-sm w-fit overflow-hidden',
-      isOwn? "bg-indigo-500 text-white":'bg-gray-100', 
+      isOwn? "bg-indigo-500 text-white":'bg-gray-100 dark:text-black', 
       data.image?"rounded-md p-0":'rounded-full py-2 px-3')
 
       return (
@@ -53,7 +53,7 @@ function MessageBox({data, isLast}:MessageBoxProps) {
                                           <Image src={data.image} alt='Image' height={288} width={288}/>
                                     </div>
                               ):(
-                                    <div className='text-black'>
+                                    <div>
                                           {data.body}
                                     </div>
                               )}
